@@ -44,17 +44,24 @@ const team= [
 // console.log(team)
 
 //Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
+
 for(let i= 0; i < team.length; i++){
     const currentTeam= team[i]
     console.log(currentTeam.nome);
     console.log(currentTeam.ruolo);
     console.log(currentTeam.foto);
 
-    const listItem= document.createElement('li')
-    listItem.innerHTML=currentTeam.nome;
-    listItem.innerHTML=currentTeam.ruolo;
-    listItem.innerHTML=currentTeam.foto;
-    document.getElementById('team-list').append(listItem)
+    // const listItem= document.createElement('li')
+    // listItem.innerHTML=currentTeam.nome;
+    // listItem.innerHTML=currentTeam.ruolo;
+    // listItem.innerHTML=currentTeam.foto;
+    const listItem =`
+        <li>
+            <h3>${currentTeam.nome}</h3>
+            <p>${currentTeam.ruolo}</p>
+            <p>${currentTeam.foto}</p>
+        </li>`;
+    document.getElementById('team-list').innerHTML+= listItem;
 
     
 
